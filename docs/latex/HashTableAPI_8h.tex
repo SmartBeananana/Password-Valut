@@ -1,0 +1,186 @@
+\hypertarget{HashTableAPI_8h}{}\section{include/\+Hash\+Table\+A\+PI.h File Reference}
+\label{HashTableAPI_8h}\index{include/\+Hash\+Table\+A\+P\+I.\+h@{include/\+Hash\+Table\+A\+P\+I.\+h}}
+
+
+File containing the function definitions of a hash table.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for Hash\+Table\+A\+P\+I.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{HashTableAPI_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNode}{Node}
+\item 
+struct \hyperlink{structHTable}{H\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structNode}{Node} \hyperlink{HashTableAPI_8h_a0466fc5f1bc9e6de776e48149b19c471}{Node}
+\item 
+typedef struct \hyperlink{structHTable}{H\+Table} \hyperlink{HashTableAPI_8h_a87a6d0849f5464aca79e337260a01316}{H\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structHTable}{H\+Table} $\ast$ \hyperlink{HashTableAPI_8h_a18a9041a22e521cf580469930cceaff9}{create\+Table} (size\+\_\+t size, int($\ast$hash\+Function)(size\+\_\+t table\+Size, char $\ast$key), void($\ast$destroy\+Data)(void $\ast$data), void($\ast$print\+Data)(void $\ast$to\+Be\+Printed))
+\item 
+\hyperlink{structNode}{Node} $\ast$ \hyperlink{HashTableAPI_8h_a23f8cea7737f95649ac220dec4ca13f5}{create\+Node} (char $\ast$key, void $\ast$data)
+\item 
+void \hyperlink{HashTableAPI_8h_a581f2ea930e7fb45ec8bb6f6dc959c01}{destroy\+Table} (\hyperlink{structHTable}{H\+Table} $\ast$hash\+Table)
+\item 
+void \hyperlink{HashTableAPI_8h_a608d70f0745f012d0f8d0ff71efcc18b}{insert\+Data} (\hyperlink{structHTable}{H\+Table} $\ast$hash\+Table, char $\ast$key, void $\ast$data)
+\item 
+void \hyperlink{HashTableAPI_8h_a18cc8f1a1a49cf9f0db185d9d44e3d40}{remove\+Data} (\hyperlink{structHTable}{H\+Table} $\ast$hash\+Table, char $\ast$key)
+\item 
+void $\ast$ \hyperlink{HashTableAPI_8h_a87a554eaaa45162cd684a1442fd9939d}{lookup\+Data} (\hyperlink{structHTable}{H\+Table} $\ast$hash\+Table, char $\ast$key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing the function definitions of a hash table. 
+
+\begin{DoxyAuthor}{Author}
+Xiangyuan Lian 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2018 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{HashTableAPI_8h_a87a6d0849f5464aca79e337260a01316}\label{HashTableAPI_8h_a87a6d0849f5464aca79e337260a01316}} 
+\index{Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}!H\+Table@{H\+Table}}
+\index{H\+Table@{H\+Table}!Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{H\+Table}{HTable}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structHTable}{H\+Table} \hyperlink{structHTable}{H\+Table}}
+
+Hash table structure \mbox{\Hypertarget{HashTableAPI_8h_a0466fc5f1bc9e6de776e48149b19c471}\label{HashTableAPI_8h_a0466fc5f1bc9e6de776e48149b19c471}} 
+\index{Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}!Node@{Node}}
+\index{Node@{Node}!Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{Node}{Node}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structNode}{Node}  \hyperlink{structNode}{Node}}
+
+\hyperlink{structNode}{Node} of the hash table. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{HashTableAPI_8h_a23f8cea7737f95649ac220dec4ca13f5}\label{HashTableAPI_8h_a23f8cea7737f95649ac220dec4ca13f5}} 
+\index{Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}!create\+Node@{create\+Node}}
+\index{create\+Node@{create\+Node}!Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{create\+Node()}{createNode()}}
+{\footnotesize\ttfamily \hyperlink{structNode}{Node}$\ast$ create\+Node (\begin{DoxyParamCaption}\item[{char $\ast$}]{key,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Function for creating a node for the hash table. \begin{DoxyPrecond}{Precondition}
+\hyperlink{structNode}{Node} must be cast to void pointer before being added. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{structNode}{Node} is valid and able to be added to the hash table 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & integer that represents the data (eg 35-\/$>$\char`\"{}hello\char`\"{}) \\
+\hline
+{\em data} & is a generic pointer to any data type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a node for the hash table 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HashTableAPI_8h_a18a9041a22e521cf580469930cceaff9}\label{HashTableAPI_8h_a18a9041a22e521cf580469930cceaff9}} 
+\index{Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}!create\+Table@{create\+Table}}
+\index{create\+Table@{create\+Table}!Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{create\+Table()}{createTable()}}
+{\footnotesize\ttfamily \hyperlink{structHTable}{H\+Table}$\ast$ create\+Table (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{int($\ast$)(size\+\_\+t table\+Size, char $\ast$key)}]{hash\+Function,  }\item[{void($\ast$)(void $\ast$data)}]{destroy\+Data,  }\item[{void($\ast$)(void $\ast$to\+Be\+Printed)}]{print\+Data }\end{DoxyParamCaption})}
+
+Function to point the hash table to the appropriate functions. Allocates memory to the struct and table based on the size given. \begin{DoxyReturn}{Returns}
+pointer to the hash table 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & size of the hash table \\
+\hline
+{\em hash\+Function} & function pointer to a function to hash the data \\
+\hline
+{\em destroy\+Data} & function pointer to a function to delete a single piece of data from the hash table \\
+\hline
+{\em print\+Node} & function pointer to a function that prints out a data element of the table \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HashTableAPI_8h_a581f2ea930e7fb45ec8bb6f6dc959c01}\label{HashTableAPI_8h_a581f2ea930e7fb45ec8bb6f6dc959c01}} 
+\index{Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}!destroy\+Table@{destroy\+Table}}
+\index{destroy\+Table@{destroy\+Table}!Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{destroy\+Table()}{destroyTable()}}
+{\footnotesize\ttfamily void destroy\+Table (\begin{DoxyParamCaption}\item[{\hyperlink{structHTable}{H\+Table} $\ast$}]{hash\+Table }\end{DoxyParamCaption})}
+
+Deletes the entire hash table and frees memory of every element. \begin{DoxyPrecond}{Precondition}
+Hash Table must exist. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+Table} & pointer to hash table containing elements of data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HashTableAPI_8h_a608d70f0745f012d0f8d0ff71efcc18b}\label{HashTableAPI_8h_a608d70f0745f012d0f8d0ff71efcc18b}} 
+\index{Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}!insert\+Data@{insert\+Data}}
+\index{insert\+Data@{insert\+Data}!Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{insert\+Data()}{insertData()}}
+{\footnotesize\ttfamily void insert\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structHTable}{H\+Table} $\ast$}]{hash\+Table,  }\item[{char $\ast$}]{key,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Inserts a \hyperlink{structNode}{Node} in the hash table. \begin{DoxyPrecond}{Precondition}
+hash\+Table type must exist and have data allocated to it 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+Table} & pointer to the hash table \\
+\hline
+{\em key} & integer that represents the data (eg 35-\/$>$\char`\"{}hello\char`\"{}) \\
+\hline
+{\em data} & pointer to generic data that is to be inserted into the list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HashTableAPI_8h_a87a554eaaa45162cd684a1442fd9939d}\label{HashTableAPI_8h_a87a554eaaa45162cd684a1442fd9939d}} 
+\index{Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}!lookup\+Data@{lookup\+Data}}
+\index{lookup\+Data@{lookup\+Data}!Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{lookup\+Data()}{lookupData()}}
+{\footnotesize\ttfamily void$\ast$ lookup\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structHTable}{H\+Table} $\ast$}]{hash\+Table,  }\item[{char $\ast$}]{key }\end{DoxyParamCaption})}
+
+Function to return the data from the key given. \begin{DoxyPrecond}{Precondition}
+The hash table exists and has memory allocated to it 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+Table} & pointer to the hash table containing data nodes \\
+\hline
+{\em key} & integer that represents a piece of data in the table (eg 35-\/$>$\char`\"{}hello\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a pointer to the data in the hash table. Returns N\+U\+LL if no match is found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HashTableAPI_8h_a18cc8f1a1a49cf9f0db185d9d44e3d40}\label{HashTableAPI_8h_a18cc8f1a1a49cf9f0db185d9d44e3d40}} 
+\index{Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}!remove\+Data@{remove\+Data}}
+\index{remove\+Data@{remove\+Data}!Hash\+Table\+A\+P\+I.\+h@{Hash\+Table\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{remove\+Data()}{removeData()}}
+{\footnotesize\ttfamily void remove\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structHTable}{H\+Table} $\ast$}]{hash\+Table,  }\item[{char $\ast$}]{key }\end{DoxyParamCaption})}
+
+Function to remove a node from the hash table \begin{DoxyPrecond}{Precondition}
+Hash table must exist and have memory allocated to it 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{structNode}{Node} at key will be removed from the hash table if it exists. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+Table} & pointer to the hash table struct \\
+\hline
+{\em key} & integer that represents a piece of data in the table (eg 35-\/$>$\char`\"{}hello\char`\"{}) \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,41 @@
+\hypertarget{structHTable}{}\section{H\+Table Struct Reference}
+\label{structHTable}\index{H\+Table@{H\+Table}}
+
+
+{\ttfamily \#include $<$Hash\+Table\+A\+P\+I.\+h$>$}
+
+
+
+Collaboration diagram for H\+Table\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{structHTable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structHTable_a6ede6f5f1f743298425e0832cfd24a4a}\label{structHTable_a6ede6f5f1f743298425e0832cfd24a4a}} 
+size\+\_\+t \hyperlink{structHTable_a6ede6f5f1f743298425e0832cfd24a4a}{size}
+\begin{DoxyCompactList}\small\item\em number that represents the size of the hash table \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHTable_ad8f77b5519a173524eee87a5ebb380a0}\label{structHTable_ad8f77b5519a173524eee87a5ebb380a0}} 
+\hyperlink{structNode}{Node} $\ast$$\ast$ \hyperlink{structHTable_ad8f77b5519a173524eee87a5ebb380a0}{table}
+\begin{DoxyCompactList}\small\item\em array that contains all of the table nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHTable_a05b3109f3bbfa3fd4b3e55c0bbd29b8a}\label{structHTable_a05b3109f3bbfa3fd4b3e55c0bbd29b8a}} 
+void($\ast$ \hyperlink{structHTable_a05b3109f3bbfa3fd4b3e55c0bbd29b8a}{destroy\+Data} )(void $\ast$data)
+\begin{DoxyCompactList}\small\item\em function pointer to a function to delete a single piece of data from the hash table \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHTable_a0e418d66d4114826c3f9905084e0b9c7}\label{structHTable_a0e418d66d4114826c3f9905084e0b9c7}} 
+int($\ast$ \hyperlink{structHTable_a0e418d66d4114826c3f9905084e0b9c7}{hash\+Function} )(size\+\_\+t table\+Size, char $\ast$key)
+\begin{DoxyCompactList}\small\item\em function pointer to a function to hash the data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structHTable_a573abbe70757c842d491ff15d827c002}\label{structHTable_a573abbe70757c842d491ff15d827c002}} 
+void($\ast$ \hyperlink{structHTable_a573abbe70757c842d491ff15d827c002}{print\+Data} )(void $\ast$to\+Be\+Printed)
+\begin{DoxyCompactList}\small\item\em function pointer to a function that prints out a data element of the table \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hash table structure 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{HashTableAPI_8h}{Hash\+Table\+A\+P\+I.\+h}\end{DoxyCompactItemize}
